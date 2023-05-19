@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  backend-proyecto:
+    container_name: backend-proyecto
+    image: backend-protecto:v1
+    build:
+      context: .
+    ports:
+      - "4001:4001"
+    networks:
+      - proyectos-app
+networks:
+  proyectos-app:

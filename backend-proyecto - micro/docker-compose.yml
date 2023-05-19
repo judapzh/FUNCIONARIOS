@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  backend-proyecto-micro:
+    container_name: backend-proyecto-micro
+    image: backend-protecto-micro:v1
+    build:
+      context: .
+    ports:
+      - "4003:4003"
+    networks:
+      - proyectos-app
+networks:
+  proyectos-app:
