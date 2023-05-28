@@ -6,8 +6,39 @@ services:
     build:
       context: .
     ports:
-      - "4003:4003"
+      - "4003"
     networks:
       - proyectos-app
+  
+  backend-proyecto-micro-2:
+    container_name: backend-proyecto-micro-2
+    image: backend-protecto-micro:v1
+    build:
+      context: .
+    ports:
+      - "4003"
+    networks:
+      - proyectos-app
+
+  backend-proyecto-micro-3:
+    container_name: backend-proyecto-micro-3
+    image: backend-protecto-micro:v1
+    build:
+      context: .
+    ports:
+      - "4003"
+    networks:
+      - proyectos-app
+
+  balanceador-carga:
+    container_name: balanceador-carga
+    image: balanceador-carga:v1
+    build:
+      context: ./balanceador
+    ports:
+      - "4004:80"
+    networks:
+      - proyectos-app
+
 networks:
-  proyectos-app:
+    proyectos-app:

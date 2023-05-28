@@ -59,6 +59,7 @@ const createProyecto= async (req = request,
 const getProyectos = async (req = request, 
     res = response) => {
         try{
+            console.log('Peticion...')
             const proyectosDB = await Proyecto.find()//select * from proyectos
                 .populate({
                     path: 'cliente',

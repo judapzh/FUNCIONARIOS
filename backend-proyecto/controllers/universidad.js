@@ -7,7 +7,7 @@ const createUniversidad = async (req = request,
         try{
             const data = req.body
             const direccion = data.direccion
-            const telefono = data.telefonn
+            const telefono = data.telefono
             console.log(data)
             const universidadBD = await Universidad.findOne({ direccion },{telefono})
             if(universidadBD){
